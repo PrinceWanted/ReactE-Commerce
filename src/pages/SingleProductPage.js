@@ -26,13 +26,16 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
+
   useEffect(() => {
     if (error) {
       setTimeout(() => {
         history.push("/");
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {
@@ -64,7 +67,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <Stars stars={stars} reviews={reviews}/>
+            <Stars stars={stars} reviews={reviews} />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
@@ -80,7 +83,7 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart product = {product} />}
+            {stock > 0 && <AddToCart product={product} />}
           </section>
         </div>
       </div>
