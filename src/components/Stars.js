@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 const Stars = ({ stars, reviews }) => {
-  console.log(stars, reviews);
+  // console.log(stars, reviews);
 
   const tempStars = Array.from({ length: 5 }, (_, index) => {
     ///index starts from 0 to 4
