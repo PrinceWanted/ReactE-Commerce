@@ -27,10 +27,11 @@ const CheckoutPage = () => {
 };
 const Wrapper = styled.div`
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: center;
   .empty {
     text-align: center;
   }
 `;
+
 export default CheckoutPage;

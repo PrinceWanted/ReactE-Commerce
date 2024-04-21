@@ -16,7 +16,84 @@ import { useHistory } from "react-router-dom";
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
-  return <h2>hello from Stripe Checkout </h2>;
+  const { cart, total_amount, shipping_fee, clearCart } = useCartContext();
+  const { myUser } = useUserContext();
+  const history = useHistory();
+
+  //stripe logic
+  const [succeeded, setSucceeded] = useState(false);
+  const [error, setError] = useState(null);
+  const [processing, setProcessing] = useState("");
+  const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState("");
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const cardStyle = {
+    style: {
+      base: {
+        color: "#32325d",
+        fontFamily: "Arial,sans-serif",
+        fontSmoothing: "antialiased",
+        fontSize: "16px",
+        "::placeholder": {
+          color: "32325d",
+        },
+      },
+      invalid: {
+        color: "#fa755a",
+        iconColor: "#fa755a",
+      },
+    },
+  };
+
+  const createPaymentIntent = async () => {
+    try {
+      const data = await axios.post(
+        ".netlify/functions/create-payment-intent",
+        JSON.stringify({ cart, shipping_fee, total_amount })
+      );
+    } catch (error) {}
+  };
+  useEffect(() => {
+    createPaymentIntent();
+    // eslint-disable-next-line
+  }, []);
+
+  const handleChange = async (event) => {};
+  const handleSubmit = async (ev) => {};
+
+  return (
+    <div>
+      <form id="payment-form" onSubmit={handleSubmit}>
+        <CardElement
+          id="card-element"
+          options={cardStyle}
+          onChange={handleChange}
+        />
+        <button disabled={processing || disabled || succeeded} id="submit">
+          <span id="button-text">
+            {processing ? <div className="spinner" id="spinner"></div> : "Pay"}
+          </span>
+        </button>
+        {/* Show any error during payment processing */}
+        {error && (
+          <div className="card-error" role="alert">
+            {error}
+          </div>
+        )}
+        {/* show success message when completed */}
+        <p className={succeeded ? "result-message" : "result-message hidden"}>
+          Payment Succeeded, see the result in your{" "}
+          <a href={`https://dashboard.stripe.com/test/payments`}>
+            {" "}
+            Stripe dashboard
+          </a>
+          Refresh the page to pay again
+        </p>
+      </form>
+    </div>
+  );
 };
 
 const StripeCheckout = () => {
