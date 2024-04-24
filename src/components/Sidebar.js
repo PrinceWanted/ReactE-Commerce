@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.svg";
+// import logo from "../assets/logo.svg";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
