@@ -18,9 +18,6 @@ Advanced react web application utlizing React 18 in an E-commerce application
 
 - Fontshare
 - [fontshare pairs](https://www.fontshare.com/pairs)
-- pick the fonts
-- purposely picked funky fonts
-- change title as well
 
   public/index.html
 
@@ -29,7 +26,7 @@ Advanced react web application utlizing React 18 in an E-commerce application
   href="https://api.fontshare.com/v2/css?f[]=khand@400&f[]=array@700,400&display=swap"
   rel="stylesheet"
 />
-<title>Gadget Junkie</title>
+<title>Gamer Stash</title>
 ```
 
 index.css
@@ -64,8 +61,8 @@ components/Hero.js
 
 ```js
 <h1>
-  We enjoy <br />
-  our gadgets
+  All the Things <br />
+  a Gamer Enjoys
 </h1>
 ```
 
@@ -76,7 +73,7 @@ components/Hero.js
 - [tailwind color shades] (https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 
 - pick grey and primary color
-- OPPOSITE ORDER !!!
+- OPPOSITE ORDER darker to lighter !!!
 
 ```css
 :root {
@@ -144,14 +141,14 @@ export default Logo;
 #### Favicon
 
 - [favicon.io](https://favicon.io/)
-- I used primary-5 color value
+- I searched with the primary-clr-5 color value
 - replace favicon.ico in public
 
 #### Main Images - First Approach
 
-- get images, I usually go with pexels
+- get images,usually stock images from pexels
 - [pexels](https://www.pexels.com/)
-- replace in src/assets
+- replace in src/assets to avoid changing code
 - hero-bcg.jpeg
 - hero-bcg-2.jpeg
 
@@ -216,8 +213,6 @@ exports.handler = async (event, context, cb) => {
 - [Single Product](http://localhost:8888/.netlify/functions/single-product)
 
 #### Install Airtable-Node
-
-- already installed in main repo
 
 ```sh
 npm i airtable-node
