@@ -8,8 +8,8 @@ const Services = () => {
       <div className="section-center">
         <article className="header">
           <h3>
-            Custom Furniture <br />
-            built only for you
+            Every single thing you could want <br />
+             in a single place
           </h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minus

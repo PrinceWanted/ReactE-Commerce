@@ -17,7 +17,7 @@ const Nav = () => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <Logo/>
+            <Logo />
           </Link>
           <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
@@ -45,6 +45,7 @@ const Nav = () => {
 };
 
 const NavContainer = styled.nav`
+  background: var(--clr-grey-9);
   height: 5rem;
   display: flex;
   align-items: center;

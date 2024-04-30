@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <Wrapper>
       <div className="section-center">
-        <h3>Join our newsletter</h3>
+        <h3>Subscribe to our newsletter</h3>
         <div className="content">
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint
@@ -28,6 +28,7 @@ const Contact = () => {
   );
 };
 const Wrapper = styled.section`
+  background: var(--clr-primary-3);
   padding: 5rem 0;
   h3 {
     text-transform: none;
@@ -35,7 +36,7 @@ const Wrapper = styled.section`
   p {
     line-height: 2;
     max-width: 45em;
-    color: var(--clr-grey-5);
+    color: var(--clr-grey-6);
   }
   .contact-form {
     width: 90vw;

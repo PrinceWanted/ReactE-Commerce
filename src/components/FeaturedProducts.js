@@ -37,7 +37,7 @@ const FeaturedProducts = () => {
 };
 
 const Wrapper = styled.section`
-  background: var(--clr-grey-10);
+  background: var(--clr-primary-3);
   .featured {
     margin: 4rem auto;
     display: grid;
